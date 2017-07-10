@@ -7,38 +7,36 @@
  */
 
 $numArr = [];
-$count = true;
+$hasDivisor = false;
 
 for ($i = 1; $i < 100; $i++) {
-
     for ($k = 2; $k < $i; $k++) {
         if ($i % $k == 0) {
-            $count = false;
+            $hasDivisor = true;
             break;
         }
-
     }
-    if ($count && $i !== 1) {
+
+    if (!$hasDivisor && $i !== 1) {
         array_push($numArr, $i . " ");
-
     }
-    $count = true;
-}
 
+    $hasDivisor = true;
+}
 ?>
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Numbers</title>
 </head>
 <body>
-<p>Simple numbers <100</p>
-
-<p><?php foreach ($numArr as $item) {
+    <p>Simple numbers <100</p>
+    <p>
+        <?php foreach ($numArr as $item) {
         echo $item;
-    } ?>
-</p>
+        }
+        ?>
+    </p>
 </body>
 </html>
