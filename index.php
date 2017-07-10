@@ -31,12 +31,11 @@ for ($i = 1; $i < 100; $i++) {
     <title>Numbers</title>
 </head>
 <body>
-    <p>Simple numbers <100</p>
+    <p>Simple numbers &lt100</p>
     <p>
         <?php foreach ($numArr as $item) {
         echo $item;
-        }
-        ?>
+        }?>
     </p>
 </body>
 </html>
