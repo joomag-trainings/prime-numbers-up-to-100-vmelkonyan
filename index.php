@@ -7,21 +7,18 @@
  */
 
 $numArr = [];
-$hasDivisor = false;
+
 
 for ($i = 1; $i < 100; $i++) {
     for ($k = 2; $k < $i; $k++) {
         if ($i % $k == 0) {
-            $hasDivisor = true;
-            break;
+            continue 2;
         }
     }
 
-    if (!$hasDivisor && $i !== 1) {
+    if ($i !== 1) {
         array_push($numArr, $i . " ");
     }
-
-    $hasDivisor = true;
 }
 ?>
 
@@ -30,12 +27,12 @@ for ($i = 1; $i < 100; $i++) {
 <head>
     <title>Numbers</title>
 </head>
-<body>
+    <body>
     <p>Simple numbers &lt100</p>
     <p>
         <?php foreach ($numArr as $item) {
-        echo $item;
-        }?>
+            echo $item;
+        } ?>
     </p>
-</body>
+    </body>
 </html>
